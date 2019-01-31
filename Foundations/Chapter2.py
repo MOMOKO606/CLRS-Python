@@ -40,7 +40,7 @@ def binary_add(A, B):
 
     #  Set sentinel.
     if len(A) != len(B):
-        return "A & B do not have the same length"
+        return "A & B do not have the same length."
 
     #  Allocate C as output list.
     n = len(A)
@@ -58,6 +58,20 @@ def binary_add(A, B):
     return C
 
 
+def selection_sort(A):
+    """ Selection Sort from Exercises 2.2-2 Chapter 1."""
+
+    n = len(A)
+    for i in range( 0, n - 1 ):
+        minA = A[i]
+        k = i
+        for j in range( i+1, n ):
+            if A[j] < minA:
+                minA = A[j]
+                k = j
+        A[k] = A[i]
+        A[i] = minA
+    return A
 
 
 if __name__ == "__main__":
@@ -68,5 +82,5 @@ if __name__ == "__main__":
     # print( insertion_sort(A1) )
     # print( insertion_sort_dec(A1) )
     # print( linear_search(A1, x) )
-    print( binary_add(A2, B2) )
-
+    # print( binary_add(A2, B2) )
+    print( selection_sort(A1) )
